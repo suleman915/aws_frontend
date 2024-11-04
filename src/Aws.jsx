@@ -7,8 +7,11 @@ const Aws = () => {
     const [response, setResponse] = useState('');
     const [inputMessage, setInputMessage] = useState('');
 
+ 
+    const serverUrl = 'http://54.87.134.24:5000'; 
+
     useEffect(() => {
-        fetch('http://localhost:5000/api/message')
+        fetch(`${serverUrl}/api/message`)
             .then(res => res.json())
             .then(data => setMessage(data.message))
             .catch(error => console.error('Error fetching message:', error));
@@ -20,7 +23,7 @@ const Aws = () => {
             return;
         }
 
-        const res = await fetch('http://localhost:5000/api/save', {
+        const res = await fetch(`${serverUrl}/api/save`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: inputMessage })
