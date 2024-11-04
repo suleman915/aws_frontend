@@ -9,7 +9,7 @@ const Aws = () => {
 
     // Fetch the message from the backend on component load
     useEffect(() => {
-        fetch('http://54.196.176.3:5000//api/message')  // backend IP and port
+        fetch('http://54.196.176.3:5000/api/message')  // backend IP and port
             .then(res => res.json())
             .then(data => setMessage(data.message))
             .catch(error => console.error('Error fetching message:', error));
@@ -21,7 +21,7 @@ const Aws = () => {
             return;
         }
 
-        const res = await fetch('http://54.196.176.3:5000//api/save', {  // backend IP and port
+        const res = await fetch('http://54.196.176.3:5000/api/save', {  // backend IP and port
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: inputMessage })
