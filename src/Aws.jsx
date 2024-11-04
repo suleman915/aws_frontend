@@ -8,7 +8,7 @@ const Aws = () => {
     const [inputMessage, setInputMessage] = useState('');
 
  
-    const serverUrl = 'http://54.87.134.24:5000'; 
+    const serverUrl = 'http://54.196.176.3:5000/'; 
 
     useEffect(() => {
         fetch(`${serverUrl}/api/message`)
